@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BlueAnt Help & FAQ</title>
+<meta name="description" content="Answers to common questions about the BlueAnt Trip Expense Manager Android app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --ink: #14213a;
+    --muted: #4d5b75;
+    --line: #dbe3f0;
+    --brand: #1565c0;
+    --brand-soft: #e3ecfb;
+    --gold: #ffb300;
+    --mark: #ffe8a3;
+    --display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+      --brand: #a9c7ff; --brand-soft: #1b2d4d; --mark: #5c4a12;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+    --brand: #a9c7ff; --brand-soft: #1b2d4d; --mark: #5c4a12;
+  }
+
+  [hidden] { display: none !important; }
+  body { background: var(--bg); color: var(--ink); font: 17px/1.6 var(--body); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header { background: var(--surface); border-bottom: 1px solid var(--line); }
+  header .wrap { padding-block: 36px 28px; display: grid; gap: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #1E88E5, #0D47A1); display: grid; place-items: center; flex: none; }
+  .logo svg { width: 22px; height: 30px; }
+  .app { font: 700 15px/1.2 var(--display); letter-spacing: .02em; }
+  .app small { display: block; font: 400 14px/1.3 var(--body); color: var(--muted); letter-spacing: 0; }
+  h1 { font: 800 clamp(30px, 6vw, 42px)/1.1 var(--display); margin: 8px 0 0; letter-spacing: -.01em; text-wrap: balance; }
+  .lede { margin: 0; color: var(--muted); max-width: 60ch; }
+
+  .search { position: relative; max-width: 620px; margin-top: 6px; }
+  .search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--muted); pointer-events: none; }
+  .search input {
+    width: 100%; box-sizing: border-box; font: 17px/1.3 var(--body); color: var(--ink);
+    padding: 14px 44px 14px 46px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--bg);
+  }
+  .search input:focus { outline: none; border-color: var(--brand); background: var(--surface); box-shadow: 0 0 0 4px var(--brand-soft); }
+  .search button { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: var(--muted); font-size: 22px; line-height: 1; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
+  .search button:hover { background: var(--brand-soft); }
+  .status { margin: 0; min-height: 1.4em; font-size: 15px; color: var(--muted); }
+
+  .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding-block: 32px 64px; align-items: start; }
+  aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); }
+  aside p { margin: 0 0 10px; font: 700 12px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .topics { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .topics a { display: flex; justify-content: space-between; gap: 8px; padding: 7px 12px; border-radius: 10px; color: var(--ink); text-decoration: none; font-size: 15.5px; }
+  .topics a:hover { background: var(--brand-soft); color: var(--brand); }
+  .topics a span { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .topics li[hidden] { display: none; }
+
+  main { display: grid; gap: 36px; min-width: 0; }
+  section { display: grid; gap: 10px; scroll-margin-top: 20px; }
+  h2 { font: 700 21px/1.25 var(--display); margin: 0 0 4px; display: flex; align-items: center; gap: 10px; }
+  h2::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex: none; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; scroll-margin-top: 20px; }
+  details[open] { border-color: color-mix(in srgb, var(--brand) 35%, var(--line)); }
+  summary { list-style: none; cursor: pointer; padding: 15px 18px; display: flex; gap: 14px; align-items: center; font: 600 16.5px/1.4 var(--display); }
+  summary::-webkit-details-marker { display: none; }
+  summary .q { flex: 1; }
+  summary .chev { flex: none; width: 22px; height: 22px; color: var(--muted); transition: transform .2s ease; }
+  details[open] summary .chev { transform: rotate(180deg); color: var(--brand); }
+  summary:hover .q { color: var(--brand); }
+  summary:focus-visible { outline: 3px solid var(--brand); outline-offset: -3px; border-radius: 14px; }
+  .a { margin: 0; padding: 0 18px 16px; color: var(--muted); max-width: 68ch; }
+  .a b { color: var(--ink); font-weight: 600; }
+  mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 1px; }
+
+  .empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 16px; padding: 28px; text-align: center; display: grid; gap: 6px; }
+  .empty strong { font: 700 18px/1.3 var(--display); }
+  .empty span { color: var(--muted); }
+
+  .contact { background: var(--brand-soft); border-radius: 18px; padding: 22px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
+  .contact div { display: grid; gap: 2px; }
+  .contact strong { font: 700 18px/1.3 var(--display); }
+  .contact .email { font: 600 17px/1.3 var(--display); color: var(--brand); user-select: all; word-break: break-all; }
+  .contact button { font: 600 15px/1 var(--body); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--brand); background: var(--surface); color: var(--brand); cursor: pointer; }
+  .contact button:hover { background: var(--bg); }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  footer .wrap { padding-block: 20px 32px; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+  footer a { color: var(--brand); }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; gap: 24px; padding-top: 20px; }
+    aside { position: static; }
+    .topics { display: flex; flex-wrap: wrap; gap: 8px; }
+    .topics a { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; font-size: 14.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) { summary .chev { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="140 70 232 370"><g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none"><path d="M228,146 q-22,-44 -60,-52"/><path d="M284,146 q22,-44 60,-52"/></g><circle cx="166" cy="92" r="15" fill="#fff"/><circle cx="346" cy="92" r="15" fill="#fff"/><path d="M256,428 C256,428 148,318 148,246 A108,108 0 1,1 364,246 C364,318 256,428 256,428 Z" fill="#fff"/><circle cx="256" cy="244" r="66" fill="#FFB300"/><circle cx="256" cy="244" r="53" fill="none" stroke="#FFD54F" stroke-width="7"/><path d="M256,220 L256,268" stroke="#0D47A1" stroke-width="12" stroke-linecap="round"/></svg>
+      </div>
+      <div class="app">BlueAnt Trip Expense Manager<small>Android app by Sabbir Ahmed</small></div>
+    </div>
+    <h1>Help &amp; FAQ</h1>
+    <p class="lede">28 answers about trips, deposits, settling up, sharing and backups. The same help is in the app under Settings → Help &amp; FAQ.</p>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search, e.g. settle, backup, code" aria-label="Search questions" autocomplete="off">
+      <button id="clear" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <aside>
+    <p>Topics</p>
+    <ul class="topics" id="topics"></ul>
+  </aside>
+  <main id="faq">
+    <div class="empty" id="empty" hidden>
+      <strong>No matching questions</strong>
+      <span>Try other words, or email the question to the developer below.</span>
+    </div>
+    <div id="groups"></div>
+    <div class="contact">
+      <div>
+        <strong>Still need help?</strong>
+        <span>Send your question or feedback to the developer:</span>
+        <span class="email" id="email">ssabbirr@gmail.com</span>
+      </div>
+      <button type="button" id="copy">Copy email</button>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>BlueAnt Trip Expense Manager · Developed by Sabbir Ahmed</span>
+    <a href="privacy-policy.html">Privacy policy</a>
+  </div>
+</footer>
+
+<script>
+  const FAQ = [{"id": "getting-started", "title": "Getting started", "items": [{"q": "How do I create a trip?", "a": "On the home screen tap New trip. Enter a name and currency; dates, budget, members, a manager and a cover photo are optional and can be changed later from the trip's ⋮ menu → Edit trip."}, {"q": "What does the trip manager do?", "a": "The manager holds the trip fund. Members give their deposits to the manager, and the manager pays for shared costs. At the end, the manager settles up with each member: returns extra money or collects what is still owed. Members never have to pay each other for group costs. The manager doesn't add deposits."}, {"q": "Do I have to choose a manager?", "a": "No. Without a manager, deposits go into a shared trip fund and settle-up amounts are shown against the fund."}, {"q": "How do I add members?", "a": "Open the trip, go to the Members tab and tap Add member. You can add a photo and phone number. Tap a member to see their deposits, payments and expenses."}]}, {"id": "deposits-expenses", "title": "Deposits & expenses", "items": [{"q": "What is a deposit?", "a": "Money a member gives to the trip fund. Add it from the Members tab → Add deposit. You can rename or add deposit types (Cash, bank transfer, etc.) in Settings → Deposit types."}, {"q": "Can a member deposit for someone else?", "a": "Yes. In Add deposit choose who paid and who it was for, then split it equally or enter custom amounts. The app then shows that those members owe the payer, under Members → Between members, until it's marked as paid."}, {"q": "How do I split an expense?", "a": "When adding an expense, choose Equally to split among the selected members, or Custom to enter each person's share."}, {"q": "Can I add my own categories?", "a": "Yes. Go to Settings → Expense categories to add, edit or remove categories with your own emoji."}, {"q": "Can I attach receipts?", "a": "Yes. On the expense screen add receipt photos from the camera or gallery. Receipts stay on your phone; they are not shared online."}]}, {"id": "settling-up", "title": "Settling up", "items": [{"q": "How is each member's balance calculated?", "a": "Balance = what they deposited + what they paid directly − their share of expenses. A positive balance means they get money back; a negative balance means they still need to pay."}, {"q": "How do I record a settlement?", "a": "In the Members tab, the settle-up cards show who pays whom. Tap Mark as paid; lower the amount for a partial payment. Recorded payments appear under Settled payments."}, {"q": "I marked a payment by mistake. How do I undo it?", "a": "Go to Members → Settled payments and remove the payment. Balances update straight away."}, {"q": "What does the green tick next to the trip name mean?", "a": "Everything is settled: all members are square with the manager and all money between members is paid. On the home screen these trips show a Settled badge."}]}, {"id": "reports-export", "title": "Reports & export", "items": [{"q": "How do I export a report?", "a": "Open the trip and tap the export (share) icon at the top. Choose PDF, CSV (spreadsheet) or a text summary, then share it or save it to your phone."}, {"q": "Does the PDF need a signature?", "a": "No. It is a digital report generated by the app and is valid without a signature."}]}, {"id": "sharing-a-trip", "title": "Sharing a trip", "items": [{"q": "How do I share a trip with members?", "a": "Open the trip → ⋮ → Share trip (view only) → Start sharing. Send the code with Invite, or let them scan the QR code. Needs internet."}, {"q": "How do I join a trip someone shared?", "a": "On the home screen tap the join icon (person with +), then type the code or scan the QR code. The trip appears under Shared with me."}, {"q": "Can people who join change anything?", "a": "No. They can only view the trip and export reports. Changes the manager makes reach them automatically. Photos and receipts are not shared."}, {"q": "What happens if I stop sharing?", "a": "Sharing is paused. People who joined keep the last copy but stop getting updates. If you share again, the same code comes back and their copy updates automatically — no need to send the code again."}, {"q": "What does New code do?", "a": "It replaces the code. People with the old code stop getting updates (they keep the copy they have). Use it if the code reached someone it shouldn't have."}, {"q": "How do I remove a shared trip from my list?", "a": "Paused trips have a delete button on the home screen. For any shared trip you can also open it → ⋮ → Remove from my list. This deletes the saved copy from your phone."}, {"q": "Can I view a shared trip offline?", "a": "Yes. The last copy you opened is saved on your phone and shown when you're offline."}]}, {"id": "backup-your-data", "title": "Backup & your data", "items": [{"q": "Where is my data stored?", "a": "On your phone. Only trips you choose to share are uploaded (without photos or receipts) so members can view them."}, {"q": "How do I back up automatically?", "a": "Settings → Automatic backup → Choose backup location. Pick a file in Google Drive, OneDrive or a phone folder. The app backs up after changes and once a day."}, {"q": "How do I move my trips to a new phone?", "a": "Back up on the old phone (Settings → Save a backup copy, or use automatic backup), then on the new phone use Settings → Restore from backup. Restoring replaces all trips on that phone. Shared trips need to be shared again from the new phone, which gives a new code."}, {"q": "Will I lose my trips if I uninstall the app?", "a": "Yes, unless you have a backup. Turn on automatic backup to a cloud folder to be safe."}]}, {"id": "settings", "title": "Settings", "items": [{"q": "Can each trip use a different currency?", "a": "Yes. The currency is chosen per trip. Set the default for new trips in Settings → Default currency."}, {"q": "Can I change how amounts and dates look?", "a": "Yes. In Settings you can show or hide decimals, put the symbol after the amount, pick a date format and choose a light, dark or system theme."}]}];
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+  const chev = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+  // Bold the app's screen and button names (text between "→" steps and known labels) for scanning.
+  const LABELS = ['New trip', 'Edit trip', 'Add member', 'Add deposit', 'Mark as paid', 'Settled payments', 'Between members',
+    'Share trip (view only)', 'Start sharing', 'Invite', 'Shared with me', 'Remove from my list', 'New code', 'Equally', 'Custom',
+    'Expense categories', 'Deposit types', 'Automatic backup', 'Choose backup location', 'Save a backup copy',
+    'Restore from backup', 'Default currency', 'Members tab', 'Settings', 'Paused'];
+
+  function format(text, query) {
+    let html = esc(text);
+    LABELS.forEach(l => { html = html.split(esc(l)).join('<b>' + esc(l) + '</b>'); });
+    if (query) {
+      const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![^<]*>)', 'gi');
+      html = html.replace(re, '<mark>$1</mark>');
+    }
+    return html;
+  }
+
+  const groupsEl = document.getElementById('groups');
+  const topicsEl = document.getElementById('topics');
+
+  function render(query) {
+    const q = query.trim().toLowerCase();
+    let shown = 0;
+    groupsEl.innerHTML = '';
+    topicsEl.innerHTML = '';
+    FAQ.forEach(g => {
+      const items = q ? g.items.filter(i => (i.q + ' ' + i.a).toLowerCase().includes(q)) : g.items;
+      topicsEl.insertAdjacentHTML('beforeend',
+        `<li ${items.length ? '' : 'hidden'}><a href="#${g.id}">${esc(g.title)}<span>${items.length}</span></a></li>`);
+      if (!items.length) return;
+      shown += items.length;
+      groupsEl.insertAdjacentHTML('beforeend', `<section id="${g.id}" aria-labelledby="h-${g.id}">
+        <h2 id="h-${g.id}">${esc(g.title)}</h2>
+        ${items.map(i => `<details id="${slug(i.q)}" ${q ? 'open' : ''}>
+          <summary><span class="q">${format(i.q, q)}</span>${chev}</summary>
+          <p class="a">${format(i.a, q)}</p>
+        </details>`).join('')}
+      </section>`);
+    });
+    document.getElementById('empty').hidden = shown > 0;
+    document.getElementById('status').textContent = q
+      ? (shown ? `${shown} ${shown === 1 ? 'answer' : 'answers'} for “${query.trim()}”` : '')
+      : '';
+    document.getElementById('clear').hidden = !query;
+  }
+
+  const input = document.getElementById('q');
+  input.addEventListener('input', () => render(input.value));
+  document.getElementById('clear').addEventListener('click', () => { input.value = ''; render(''); input.focus(); });
+
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id && document.getElementById(id);
+    if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({ block: 'start' }); }
+  }
+  window.addEventListener('hashchange', openFromHash);
+
+  document.getElementById('copy').addEventListener('click', function () {
+    const btn = this, emailEl = document.getElementById('email');
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents(emailEl);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Press Ctrl+C to copy';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(emailEl.textContent).then(() => {
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = 'Copy email'; }, 2000);
+      }, fallback);
+    } else fallback();
+  });
+
+  render('');
+  openFromHash();
+</script>
+</body>
+</html>

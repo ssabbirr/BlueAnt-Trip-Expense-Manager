@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BlueAnt Privacy Policy</title>
+<meta name="description" content="Privacy policy for the BlueAnt Trip Expense Manager Android app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --ink: #14213a;
+    --muted: #4d5b75;
+    --line: #dbe3f0;
+    --brand: #1565c0;
+    --brand-soft: #e3ecfb;
+    --teal: #00796b;
+    --teal-soft: #e0f2ef;
+    --warn: #b3261e;
+    --warn-soft: #fbe9e7;
+    --display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+      --brand: #a9c7ff; --brand-soft: #1b2d4d; --teal: #7fd6c7; --teal-soft: #143430; --warn: #ffb4ab; --warn-soft: #3d1f1c;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+    --brand: #a9c7ff; --brand-soft: #1b2d4d; --teal: #7fd6c7; --teal-soft: #143430; --warn: #ffb4ab; --warn-soft: #3d1f1c;
+  }
+
+  body { background: var(--bg); color: var(--ink); font: 17px/1.65 var(--body); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { border-bottom: 1px solid var(--line); background: var(--surface); }
+  header .wrap { padding-block: 40px 32px; display: grid; gap: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #1E88E5, #0D47A1); display: grid; place-items: center; flex: none; }
+  .logo svg { width: 22px; height: 30px; }
+  .app { font: 700 15px/1.2 var(--display); letter-spacing: .02em; }
+  .app small { display: block; font: 400 14px/1.3 var(--body); color: var(--muted); letter-spacing: 0; }
+  h1 { font: 800 clamp(30px, 6vw, 42px)/1.1 var(--display); margin: 8px 0 0; text-wrap: balance; letter-spacing: -.01em; }
+  .meta { color: var(--muted); font-size: 15px; margin: 0; }
+
+  main .wrap { padding-block: 32px 64px; display: grid; gap: 40px; }
+
+  .glance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+  @media (max-width: 520px) { .glance { grid-template-columns: 1fr; } }
+  .glance li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 4px; }
+  .glance b { font: 700 16px/1.3 var(--display); }
+  .glance span { color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+  nav.toc { font-size: 15px; }
+  nav.toc p { margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2 240px; column-gap: 32px; }
+  nav.toc li { break-inside: avoid; padding: 2px 0; }
+
+  section { display: grid; gap: 12px; scroll-margin-top: 16px; }
+  h2 { font: 700 22px/1.25 var(--display); margin: 0; text-wrap: balance; display: flex; gap: 10px; align-items: baseline; }
+  h2 .n { font-size: 15px; color: var(--brand); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  h3 { font: 700 17px/1.3 var(--display); margin: 8px 0 0; }
+  p, ul { margin: 0; }
+  ul { padding-left: 22px; display: grid; gap: 6px; }
+  a { color: var(--brand); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .box { border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; align-content: start; }
+  .box h3 { margin: 0; font-size: 15px; letter-spacing: .02em; }
+  .box ul { font-size: 16px; gap: 4px; }
+  .box.up { background: var(--brand-soft); }
+  .box.up h3 { color: var(--brand); }
+  .box.stay { background: var(--teal-soft); }
+  .box.stay h3 { color: var(--teal); }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  th { font: 700 13px/1.3 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .note { border-left: 3px solid var(--warn); background: var(--warn-soft); padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 16px; }
+
+  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+  .contact div { display: grid; gap: 2px; }
+  .contact .email { font: 600 18px/1.3 var(--display); user-select: all; word-break: break-all; }
+  .contact button { font: 600 15px/1 var(--body); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--brand); background: transparent; color: var(--brand); cursor: pointer; }
+  .contact button:hover { background: var(--brand-soft); }
+
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  footer .wrap { padding-block: 20px 32px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="140 70 232 370"><g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none"><path d="M228,146 q-22,-44 -60,-52"/><path d="M284,146 q22,-44 60,-52"/></g><circle cx="166" cy="92" r="15" fill="#fff"/><circle cx="346" cy="92" r="15" fill="#fff"/><path d="M256,428 C256,428 148,318 148,246 A108,108 0 1,1 364,246 C364,318 256,428 256,428 Z" fill="#fff"/><circle cx="256" cy="244" r="66" fill="#FFB300"/><circle cx="256" cy="244" r="53" fill="none" stroke="#FFD54F" stroke-width="7"/><path d="M256,220 L256,268" stroke="#0D47A1" stroke-width="12" stroke-linecap="round"/></svg>
+      </div>
+      <div class="app">BlueAnt Trip Expense Manager<small>Android app by Sabbir Ahmed</small></div>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective 3 October 2026 · Applies to version 1.0.0 and later</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <ul class="glance" aria-label="Summary">
+      <li><b>No sign-up</b><span>You never create an account or give an email, password or phone number.</span></li>
+      <li><b>No ads or tracking</b><span>No advertising, no analytics and no selling of data.</span></li>
+      <li><b>Stays on your phone</b><span>Your trips, photos and receipts are stored only on your device.</span></li>
+      <li><b>Online only if you share</b><span>A trip goes online only when you choose to share it, without photos, receipts or phone numbers.</span></li>
+    </ul>
+
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#about">About this policy</a></li>
+        <li><a href="#device">Data stored on your phone</a></li>
+        <li><a href="#sharing">Sharing a trip online</a></li>
+        <li><a href="#id">Anonymous app ID</a></li>
+        <li><a href="#backups">Backups</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#retention">How long data is kept</a></li>
+        <li><a href="#choices">Your choices and deletion</a></li>
+        <li><a href="#others">Other people's details</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes and contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="about">
+      <h2><span class="n">1</span>About this policy</h2>
+      <p>This policy explains what information the BlueAnt Trip Expense Manager app ("the app") handles, where it goes and what control you have. The app is developed by Sabbir Ahmed ("I", "me"). The app helps a travel group record deposits and expenses, split costs and settle up.</p>
+    </section>
+
+    <section id="device">
+      <h2><span class="n">2</span>Data stored on your phone</h2>
+      <p>Everything you enter is saved in the app's private storage on your device:</p>
+      <ul>
+        <li>Trips: name, description, dates, currency, budget and cover photo</li>
+        <li>Members: names, optional phone numbers and optional photos</li>
+        <li>Deposits, expenses, splits, categories, payments and notes</li>
+        <li>Receipt photos you take or pick</li>
+        <li>Your settings, such as theme, currency and date format</li>
+      </ul>
+      <p>This data is not sent to me or to anyone else unless you use trip sharing (section 3) or make a backup (section 5). I have no access to it.</p>
+    </section>
+
+    <section id="sharing">
+      <h2><span class="n">3</span>Sharing a trip online</h2>
+      <p>Sharing is optional. When you tap <em>Start sharing</em> on a trip, the app uploads a copy of that one trip to Google Cloud Firestore, a database service from Google Firebase, so people you give the trip code to can view it. While the trip is shared, the copy is updated when you make changes.</p>
+      <div class="split">
+        <div class="box up">
+          <h3>Uploaded when you share</h3>
+          <ul>
+            <li>Trip name, description, dates, currency and budget</li>
+            <li>Member names and who is the manager</li>
+            <li>Deposits, expenses, splits and payments, with their notes</li>
+            <li>Names and icons of the categories used</li>
+          </ul>
+        </div>
+        <div class="box stay">
+          <h3>Never uploaded</h3>
+          <ul>
+            <li>Member photos and trip cover photos</li>
+            <li>Receipt photos</li>
+            <li>Member phone numbers</li>
+            <li>Your other trips and your settings</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Who can see a shared trip</h3>
+      <p>Anyone who has the 8-character trip code can view the trip and export reports from it. Nobody else can: codes cannot be listed or searched. People who join cannot change anything. Only share the code with people you trust, and use <em>New code</em> if it reaches someone it shouldn't have.</p>
+      <p>People who join keep a copy of the trip on their own phone so they can view it offline. That copy is updated while you share and stays on their phone until they remove it, even if you stop sharing.</p>
+      <h3>Google Firebase</h3>
+      <p>Firebase processes technical information such as IP addresses and device details to deliver this service. Google handles this data under the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and security terms</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>. The app does not use Firebase Analytics, Crashlytics or advertising services.</p>
+    </section>
+
+    <section id="id">
+      <h2><span class="n">4</span>Anonymous app ID</h2>
+      <p>When you first share or join a trip, the app signs in to Firebase Authentication anonymously. This creates a random ID for your installation of the app. It is not linked to your name, email, phone number or Google account. It is used only to make sure that just your installation can update or remove the trips you share. Uninstalling the app discards it.</p>
+    </section>
+
+    <section id="backups">
+      <h2><span class="n">5</span>Backups</h2>
+      <p>You can save a backup file, or turn on automatic backup to a file you choose, for example in Google Drive, OneDrive or a phone folder. A backup file contains all your trips, including photos, receipts and phone numbers. It is stored only where you pick, and that storage provider's own privacy policy applies. I do not receive backup files.</p>
+      <p>Android's own device backup may also copy the app's data to your Google account if you have turned it on in your phone's settings. Google manages that backup.</p>
+    </section>
+
+    <section id="permissions">
+      <h2><span class="n">6</span>Permissions</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Permission</th><th>Why it is used</th></tr></thead>
+          <tbody>
+            <tr><td>Internet, network state</td><td>Sharing and joining trips. Nothing else in the app needs internet.</td></tr>
+            <tr><td>Run at startup, keep awake, background work</td><td>Automatic backup runs after changes and once a day, if you turn it on.</td></tr>
+            <tr><td>Camera (system camera app)</td><td>Taking member, cover and receipt photos. The app opens your phone's camera app and does not ask for camera permission itself.</td></tr>
+            <tr><td>Photos (system photo picker)</td><td>Choosing existing photos. The app only sees the photos you pick and does not ask for storage permission.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="retention">
+      <h2><span class="n">7</span>How long data is kept</h2>
+      <ul>
+        <li><strong>On your phone:</strong> until you delete it or uninstall the app.</li>
+        <li><strong>Shared trip online:</strong> while the trip is shared. The online copy is deleted when you stop sharing, create a new code, delete the trip or restore a backup over it. If your phone is offline, the deletion is sent when it reconnects.</li>
+        <li><strong>On viewers' phones:</strong> until each viewer removes the trip or uninstalls the app.</li>
+      </ul>
+      <p>Google may keep deleted data in its own backups for a limited period under its policies.</p>
+    </section>
+
+    <section id="choices">
+      <h2><span class="n">8</span>Your choices and deletion</h2>
+      <ul>
+        <li>Use the app without ever sharing a trip. Then nothing leaves your phone except backups you choose to make.</li>
+        <li>Stop sharing a trip at any time from the trip's menu → <em>Sharing: on</em> → <em>Stop</em>.</li>
+        <li>Delete a trip, or uninstall the app, to remove its data from your phone.</li>
+        <li>As a viewer, remove a shared trip from your list to delete its copy from your phone.</li>
+      </ul>
+      <p>If you can no longer reach the phone that shared a trip and want its online copy deleted, email me with the trip code. I will delete it within 30 days.</p>
+    </section>
+
+    <section id="others">
+      <h2><span class="n">9</span>Other people's details</h2>
+      <p>When you add travel companions as members, you enter their names and, optionally, phone numbers and photos. Please add only what you need and make sure they are comfortable with it, especially before sharing the trip. Shared trips include member names and amounts, but never phone numbers or photos.</p>
+    </section>
+
+    <section id="security">
+      <h2><span class="n">10</span>Security</h2>
+      <p>Shared trips travel over encrypted connections (HTTPS/TLS). Firebase security rules allow only the installation that created a shared trip to change or delete it, and do not allow trips to be listed. Data on your phone is kept in the app's private storage, which other apps cannot read. No method of storage or transfer is completely secure, but these measures protect your data against common risks.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="n">11</span>Children</h2>
+      <p>The app is not directed at children under 13, and I do not knowingly collect personal information from them.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="n">12</span>Changes and contact</h2>
+      <p>If this policy changes, the new version will be posted on this page with a new effective date. Significant changes will also be mentioned in the app's release notes.</p>
+      <div class="contact">
+        <div>
+          <span class="meta">Questions or deletion requests</span>
+          <span class="email" id="email">ssabbirr@gmail.com</span>
+        </div>
+        <button type="button" id="copy">Copy email</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">BlueAnt Trip Expense Manager · Developed by Sabbir Ahmed · <a href="./">Help &amp; FAQ</a></div>
+</footer>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this, text = document.getElementById('email').textContent;
+    function selectText() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Press Ctrl+C to copy';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+      }, selectText);
+    } else { selectText(); }
+  });
+</script>
+</body>
+</html>
