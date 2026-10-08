@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BlueAnt Data Deletion</title>
+<meta name="description" content="How to delete your data from the BlueAnt Trip Expense Manager Android app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --ink: #14213a;
+    --muted: #4d5b75;
+    --line: #dbe3f0;
+    --brand: #1565c0;
+    --brand-soft: #e3ecfb;
+    --teal: #00796b;
+    --teal-soft: #e0f2ef;
+    --warn: #b3261e;
+    --warn-soft: #fbe9e7;
+    --display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+      --brand: #a9c7ff; --brand-soft: #1b2d4d; --teal: #7fd6c7; --teal-soft: #143430; --warn: #ffb4ab; --warn-soft: #3d1f1c;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0e1522; --surface: #162033; --ink: #e6ecf7; --muted: #a5b2c8; --line: #27344c;
+    --brand: #a9c7ff; --brand-soft: #1b2d4d; --teal: #7fd6c7; --teal-soft: #143430; --warn: #ffb4ab; --warn-soft: #3d1f1c;
+  }
+
+  body { background: var(--bg); color: var(--ink); font: 17px/1.65 var(--body); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { border-bottom: 1px solid var(--line); background: var(--surface); }
+  header .wrap { padding-block: 40px 32px; display: grid; gap: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #1E88E5, #0D47A1); display: grid; place-items: center; flex: none; }
+  .logo svg { width: 22px; height: 30px; }
+  .app { font: 700 15px/1.2 var(--display); letter-spacing: .02em; }
+  .app small { display: block; font: 400 14px/1.3 var(--body); color: var(--muted); letter-spacing: 0; }
+  h1 { font: 800 clamp(30px, 6vw, 42px)/1.1 var(--display); margin: 8px 0 0; text-wrap: balance; letter-spacing: -.01em; }
+  .meta { color: var(--muted); font-size: 15px; margin: 0; }
+
+  main .wrap { padding-block: 32px 64px; display: grid; gap: 40px; }
+
+  .glance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+  @media (max-width: 520px) { .glance { grid-template-columns: 1fr; } }
+  .glance li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 4px; }
+  .glance b { font: 700 16px/1.3 var(--display); }
+  .glance span { color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+  nav.toc { font-size: 15px; }
+  nav.toc p { margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2 240px; column-gap: 32px; }
+  nav.toc li { break-inside: avoid; padding: 2px 0; }
+
+  section { display: grid; gap: 12px; scroll-margin-top: 16px; }
+  h2 { font: 700 22px/1.25 var(--display); margin: 0; text-wrap: balance; display: flex; gap: 10px; align-items: baseline; }
+  h2 .n { font-size: 15px; color: var(--brand); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  h3 { font: 700 17px/1.3 var(--display); margin: 8px 0 0; }
+  p, ul { margin: 0; }
+  ul { padding-left: 22px; display: grid; gap: 6px; }
+  a { color: var(--brand); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .box { border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; align-content: start; }
+  .box h3 { margin: 0; font-size: 15px; letter-spacing: .02em; }
+  .box ul { font-size: 16px; gap: 4px; }
+  .box.up { background: var(--brand-soft); }
+  .box.up h3 { color: var(--brand); }
+  .box.stay { background: var(--teal-soft); }
+  .box.stay h3 { color: var(--teal); }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  th { font: 700 13px/1.3 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .note { border-left: 3px solid var(--warn); background: var(--warn-soft); padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 16px; }
+
+  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+  .contact div { display: grid; gap: 2px; }
+  .contact .email { font: 600 18px/1.3 var(--display); user-select: all; word-break: break-all; }
+  .contact button { font: 600 15px/1 var(--body); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--brand); background: transparent; color: var(--brand); cursor: pointer; }
+  .contact button:hover { background: var(--brand-soft); }
+
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  footer .wrap { padding-block: 20px 32px; }
+
+  .steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 10px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+  .steps li::before { content: counter(s); width: 28px; height: 28px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); font: 700 14px/28px var(--display); text-align: center; }
+  .template { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; font-size: 16px; display: grid; gap: 4px; }
+  .template span { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="140 70 232 370"><g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none"><path d="M228,146 q-22,-44 -60,-52"/><path d="M284,146 q22,-44 60,-52"/></g><circle cx="166" cy="92" r="15" fill="#fff"/><circle cx="346" cy="92" r="15" fill="#fff"/><path d="M256,428 C256,428 148,318 148,246 A108,108 0 1,1 364,246 C364,318 256,428 256,428 Z" fill="#fff"/><circle cx="256" cy="244" r="66" fill="#FFB300"/><circle cx="256" cy="244" r="53" fill="none" stroke="#FFD54F" stroke-width="7"/><path d="M256,220 L256,268" stroke="#0D47A1" stroke-width="12" stroke-linecap="round"/></svg>
+      </div>
+      <div class="app">BlueAnt Trip Expense Manager<small>Android app by Sabbir Ahmed</small></div>
+    </div>
+    <h1>Delete your data</h1>
+    <p class="meta">For the BlueAnt Trip Expense Manager app (com.blueant.tripexpense) by Sabbir Ahmed</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <p>BlueAnt Trip Expense Manager does not have user accounts. Your trips are stored on your phone. The only data stored online is a copy of a trip you chose to share, so members can view it. You can delete that online copy yourself at any time, or ask me to delete it.</p>
+    </section>
+
+    <section id="in-app">
+      <h2><span class="n">1</span>Delete it yourself in the app</h2>
+      <h3>Remove a shared trip from the internet</h3>
+      <ol class="steps">
+        <li><span>Open the trip in the app.</span></li>
+        <li><span>Tap <em>⋮</em> (top right) → <em>Sharing: on</em>.</span></li>
+        <li><span>Tap <em>Stop</em> and confirm. The online copy is deleted straight away (or as soon as your phone is back online).</span></li>
+      </ol>
+      <p>Deleting the trip (<em>⋮</em> → <em>Delete trip</em>) also deletes its online copy.</p>
+      <h3>Delete everything on your phone</h3>
+      <p>Delete trips one by one, or uninstall the app. Uninstalling removes all trips, photos, receipts and the app's anonymous ID from your phone.</p>
+    </section>
+
+    <section id="request">
+      <h2><span class="n">2</span>Ask me to delete it</h2>
+      <p>If you no longer have the phone that shared the trip, or the app isn't working, email a deletion request:</p>
+      <div class="contact">
+        <div>
+          <span class="meta">Send deletion requests to</span>
+          <span class="email" id="email">ssabbirr@gmail.com</span>
+        </div>
+        <button type="button" id="copy">Copy email</button>
+      </div>
+      <div class="template">
+        <strong>Subject: BlueAnt data deletion request</strong>
+        <span>Include the 8-character trip code (for example ABCD-2345) and the trip name. If you can't find the code, ask anyone who joined the trip: it's shown on their phone under Shared with me.</span>
+      </div>
+      <p>I will delete the online copy of that trip within <strong>30 days</strong> and reply to confirm.</p>
+    </section>
+
+    <section id="what">
+      <h2><span class="n">3</span>What is deleted and what is kept</h2>
+      <div class="split">
+        <div class="box up">
+          <h3>Deleted</h3>
+          <ul>
+            <li>The online copy of the trip: trip name, description, dates, currency and budget</li>
+            <li>Member names and who is the manager</li>
+            <li>Deposits, expenses, splits, payments and their notes</li>
+            <li>The categories used in the trip</li>
+          </ul>
+        </div>
+        <div class="box stay">
+          <h3>Not affected</h3>
+          <ul>
+            <li>Trips on your own phone, until you delete them there</li>
+            <li>Copies saved on the phones of people who joined, until they remove it from their list</li>
+            <li>Backup files you saved yourself to Google Drive, OneDrive or your phone</li>
+          </ul>
+        </div>
+      </div>
+      <p>I keep no other copy. Google, which runs the database, may keep deleted data in its own backups for a limited time under its policies. Photos, receipts and phone numbers are never stored online, so there is nothing to delete there.</p>
+      <p>For full details, see the <a href="privacy-policy.html">privacy policy</a>.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">BlueAnt Trip Expense Manager · Developed by Sabbir Ahmed · <a href="./">Help &amp; FAQ</a></div>
+</footer>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this, text = document.getElementById('email').textContent;
+    function selectText() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Press Ctrl+C to copy';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+      }, selectText);
+    } else { selectText(); }
+  });
+</script>
+</body>
+</html>
